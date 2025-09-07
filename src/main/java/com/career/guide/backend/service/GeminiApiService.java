@@ -274,6 +274,8 @@ public class GeminiApiService {
 
             USER CONTEXT
             - branchOrField: %s
+            - primaryProgrammingLanguage: %s
+            - programmingExpertiseLevel: %s
             - careerGoal: %s
             - currentSkills: %s
             - skillLevels: %s
@@ -295,9 +297,13 @@ public class GeminiApiService {
             }
             """,
             onboarding != null && onboarding.getBranch() != null ? onboarding.getBranch() : "Computer Science",
+            onboarding != null && onboarding.getPrimaryProgrammingLanguage() != null ? onboarding.getPrimaryProgrammingLanguage() : "Programming Basics",
+            onboarding != null && onboarding.getProgrammingExpertiseLevel() != null ? onboarding.getProgrammingExpertiseLevel() : "Beginner",
             onboarding != null && onboarding.getCareerGoal() != null ? onboarding.getCareerGoal() : "Software Developer",
-            onboarding != null && onboarding.getCurrentSkills() != null ? onboarding.getCurrentSkills() : "Programming basics",
-            onboarding != null && onboarding.getSkillLevels() != null ? onboarding.getSkillLevels() : "Beginner",
+            (onboarding != null && onboarding.getCurrentSkills() != null ? onboarding.getCurrentSkills() : "Programming basics")
+                + (onboarding != null && onboarding.getPrimaryProgrammingLanguage() != null ? (", " + onboarding.getPrimaryProgrammingLanguage()) : ""),
+            (onboarding != null && onboarding.getProgrammingExpertiseLevel() != null ? onboarding.getProgrammingExpertiseLevel() :
+                (onboarding != null && onboarding.getSkillLevels() != null ? onboarding.getSkillLevels() : "Beginner")),
             onboarding != null && onboarding.getTargetCompanies() != null ? onboarding.getTargetCompanies() : "Tech companies",
             onboarding != null && onboarding.getPreferredRoles() != null ? onboarding.getPreferredRoles() : "Software Engineer"
         );
@@ -311,6 +317,8 @@ public class GeminiApiService {
             - targetGoal: %s
             - currentProgressNote: %s
             - branchOrField: %s
+            - primaryProgrammingLanguage: %s
+            - programmingExpertiseLevel: %s
             - currentSkills: %s
             - targetCompanies: %s
             - preferredRoles: %s
@@ -352,14 +360,17 @@ public class GeminiApiService {
             - The final milestone must be a capstone aligned to targetGoal with a showcase/portfolio delivery.
             - Do NOT include any explanation outside of the JSON array.
             """,
-            onboarding.getCareerGoal() != null ? onboarding.getCareerGoal() : "Software Developer",
-            user.getUserProfile() != null && user.getUserProfile().getBio() != null ? user.getUserProfile().getBio() : "Starting from basics",
-            onboarding.getBranch() != null ? onboarding.getBranch() : "Computer Science",
-            onboarding.getCurrentSkills() != null ? onboarding.getCurrentSkills() : "Basic programming",
-            onboarding.getTargetCompanies() != null ? onboarding.getTargetCompanies() : "Tech companies",
-            onboarding.getPreferredRoles() != null ? onboarding.getPreferredRoles() : "Software Engineer",
-            onboarding.getTargetSalary() != null ? onboarding.getTargetSalary() : 50000,
-            onboarding.getDailyStudyHours() != null ? onboarding.getDailyStudyHours() : 2,
+            onboarding != null && onboarding.getCareerGoal() != null ? onboarding.getCareerGoal() : "Software Developer",
+            user != null && user.getUserProfile() != null && user.getUserProfile().getBio() != null ? user.getUserProfile().getBio() : "Starting from basics",
+            onboarding != null && onboarding.getBranch() != null ? onboarding.getBranch() : "Computer Science",
+            onboarding != null && onboarding.getPrimaryProgrammingLanguage() != null ? onboarding.getPrimaryProgrammingLanguage() : "Programming Basics",
+            onboarding != null && onboarding.getProgrammingExpertiseLevel() != null ? onboarding.getProgrammingExpertiseLevel() : "Beginner",
+            (onboarding != null && onboarding.getCurrentSkills() != null ? onboarding.getCurrentSkills() : "Basic programming")
+                + (onboarding != null && onboarding.getPrimaryProgrammingLanguage() != null ? (", " + onboarding.getPrimaryProgrammingLanguage()) : ""),
+            onboarding != null && onboarding.getTargetCompanies() != null ? onboarding.getTargetCompanies() : "Tech companies",
+            onboarding != null && onboarding.getPreferredRoles() != null ? onboarding.getPreferredRoles() : "Software Engineer",
+            onboarding != null && onboarding.getTargetSalary() != null ? onboarding.getTargetSalary() : 50000,
+            onboarding != null && onboarding.getDailyStudyHours() != null ? onboarding.getDailyStudyHours() : 2,
             quizResult != null ? quizResult.getTotalScore() : 0
         );
     }

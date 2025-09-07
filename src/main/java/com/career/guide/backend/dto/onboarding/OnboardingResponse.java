@@ -22,16 +22,11 @@ public class OnboardingResponse {
 	private String targetCompanies;
 	private String preferredRoles;
 	private Double targetSalary;
-	private String preferredLocation;
 	private String currentSkills;
 	private String skillLevels;
-	private String learningPreferences;
 	private Integer dailyStudyHours;
-	private String preferredStudyTime;
-	private Boolean weekendAvailability;
-	private String internshipExperience;
-	private String projectExperience;
-	private String certifications;
+	private String primaryProgrammingLanguage;
+	private String programmingExpertiseLevel;
 	private LocalDateTime completedAt;
 	private Boolean isCompleted;
 }

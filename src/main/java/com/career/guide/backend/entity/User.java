@@ -59,6 +59,12 @@ public class User {
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private OnboardingData onboardingData;
 
+	@Column(name = "onboarding_completed")
+	private Boolean onboardingCompleted = false;
+
+	@Column(name = "quiz_completed")
+	private Boolean quizCompleted = false;
+
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<QuizResult> quizResults;
 

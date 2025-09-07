@@ -46,35 +46,20 @@ public class OnboardingData {
 	@Column(name = "target_salary")
 	private Double targetSalary;
 
-	@Column(name = "preferred_location", columnDefinition = "TEXT")
-	private String preferredLocation;
-
 	@Column(name = "current_skills", columnDefinition = "TEXT")
 	private String currentSkills;
 
 	@Column(name = "skill_levels", columnDefinition = "TEXT")
 	private String skillLevels;
 
-	@Column(name = "learning_preferences", columnDefinition = "TEXT")
-	private String learningPreferences;
-
 	@Column(name = "daily_study_hours")
 	private Integer dailyStudyHours;
 
-	@Column(name = "preferred_study_time")
-	private String preferredStudyTime;
+	@Column(name = "primary_programming_language")
+	private String primaryProgrammingLanguage;
 
-	@Column(name = "weekend_availability")
-	private Boolean weekendAvailability;
-
-	@Column(name = "internship_experience", columnDefinition = "TEXT")
-	private String internshipExperience;
-
-	@Column(name = "project_experience", columnDefinition = "TEXT")
-	private String projectExperience;
-
-	@Column(name = "certifications", columnDefinition = "TEXT")
-	private String certifications;
+	@Column(name = "programming_expertise_level")
+	private String programmingExpertiseLevel;
 
 	@Column(name = "completed_at")
 	private LocalDateTime completedAt;

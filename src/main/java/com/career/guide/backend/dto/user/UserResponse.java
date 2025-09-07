@@ -18,6 +18,6 @@ public class UserResponse {
 	private String profilePicture;
 	private Boolean verified;
 	private UserRole role;
+	private Boolean onboardingCompleted;
+	private Boolean quizCompleted;
 }
-
-
